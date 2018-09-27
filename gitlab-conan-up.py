@@ -66,7 +66,7 @@ class Gitlab:
             if len(comment) > 0:
                 version = re.search(r'''^\s+version\s*=\s*['"]([^'"]*).*$''', self.conanfile, re.MULTILINE)
                 if version and version.group(1) == self._version:
-                    // TODO (greed) Remove ispsystem depends
+                    # TODO (greed) Remove ispsystem depends
                     values = self._gitlab.max_version(self._name + '@ispsystem/' + self.branch, self._version).split('.')
                     while len(values) < 3:
                         values.append('0')
