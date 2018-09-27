@@ -5,7 +5,6 @@ import json
 import os
 import re
 import subprocess
-import sys
 import tempfile
 import time
 from termcolor import colored
@@ -319,7 +318,6 @@ class Gitlab:
               format(status=status, pipeline=pipeline_id))
         return status == 'success'
 
-sys.setdefaultencoding('utf8')
 parser = argparse.ArgumentParser(description='Conan package version updater')
 parser.add_argument('--gitlab', help='GitLab URL', required=True)
 parser.add_argument('--gitlab-token', help='GitLab private token', required=True)
